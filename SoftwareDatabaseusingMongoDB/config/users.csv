@@ -1,0 +1,3 @@
+admin,admin@example.com,admin,["DT001@r","DT202@r"]
+user_1,user_1@example.com,default,["DT001@r","DT202@r","DT004@rw"]
+user_2,user_2@example.com,default,["DT001@r","DT002@rw"]

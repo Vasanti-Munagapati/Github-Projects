@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": "true",
+            "args": ["-e","ac9lkjlscsha6-ats.iot.us-east-1.amazonaws.com",
+            "-r","root-CA.crt",
+            "-c","58fda91699268004b9a1cbc1cdf90efd5cd6749eb6cc9da7b5d68af69cf6a247-certificate.pem.crt",
+            "-k","58fda91699268004b9a1cbc1cdf90efd5cd6749eb6cc9da7b5d68af69cf6a247-private.pem.key", 
+            "-t","iot/demo/bsm","-id","client01"]
+        }
+    ]
+}

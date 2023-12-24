@@ -1,0 +1,22 @@
+{
+    "broker_host": "localhost",
+    "broker_port": 1883,
+    "devices": [
+        {
+            "type": "light",
+            "publish_frequency": 5,
+            "publish_topic": "devices/room/light",
+            "switch_state": "OFF",
+            "intensity": "LOW",
+            "device_count": 5
+        },
+        {
+            "type": "ac",
+            "publish_frequency": 10,
+            "publish_topic": "devices/room/ac",
+            "switch_state": "OFF",
+            "temperature" : 22
+            "device_count": 3
+        }
+    ]
+}

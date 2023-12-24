@@ -1,0 +1,103 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Parameters": {
+        "Subnets2": {
+            "Description": "VPC Subnet-2 Id",
+            "Type": "AWS::EC2::Subnet::Id",
+            "Default": "subnet-0ee8ec081511ef58c"
+        }
+    },
+    "Resources": {
+        "agritechKinesisStream": {
+            "Type": "AWS::Kinesis::Stream",
+            "Properties": {
+                "Name": "agritech_kinesisstream",
+                "ShardCount": 1
+            }
+        },
+        "devopsprjtSNSTopic": {
+            "Type": "AWS::SNS::Topic",
+            "Properties": {
+                "TopicName": "agritech-alert-mail-sns-topic",
+                "Subscription": [
+                    {
+                        "Endpoint": "vassu.m4@gmail.com",
+                        "Protocol": "email"
+                    }
+                ]
+            }
+        },
+        "rawdataDynamoDB": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "deviceid",
+                        "AttributeType": "S"
+                    },
+                    {
+                        "AttributeName": "dttimestamp",
+                        "AttributeType": "S"
+                    }
+                ],
+                "KeySchema": [
+                    {
+                        "AttributeName": "deviceid",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "dttimestamp",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "TableName": "agritech_raw_data",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "rawdataDynamoDB"
+                    }
+                ],
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": 5,
+                    "WriteCapacityUnits": 5
+                }
+            }
+        },
+        "devicealertDynamoDB": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "sprinkler_id",
+                        "AttributeType": "S"
+                    },
+                    {
+                        "AttributeName": "timestamp",
+                        "AttributeType": "S"
+                    }
+                ],
+                "KeySchema": [
+                    {
+                        "AttributeName": "sprinkler_id",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "timestamp",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "TableName": "agritech_device_alert",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "devicealertDynamoDB"
+                    }
+                ],
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": 5,
+                    "WriteCapacityUnits": 5
+                }
+            }
+        }
+    }
+}

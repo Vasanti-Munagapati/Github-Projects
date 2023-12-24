@@ -1,0 +1,147 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Parameters": {
+        "Subnets2": {
+            "Description": "VPC Subnet-2 Id",
+            "Type": "AWS::EC2::Subnet::Id",
+            "Default": "subnet-00af8ebcfabf100e3"
+        }
+    },
+    "Resources": {
+        "TestSG": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 22,
+                        "ToPort": 22,
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 22,
+                        "ToPort": 22,
+                        "CidrIp": "0.0.0.0/0"
+                    }
+                ],
+                "GroupDescription": "Allows HTTP and SSH",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "TestSG"
+                    }
+                ]
+            }
+        },
+        "EC2devopscldprjt": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "AvailabilityZone": "us-east-1a",
+                "InstanceType": "t2.micro",
+                "ImageId": "ami-0557a15b87f6559cf",
+                "KeyName": "devopscldprjt",
+                "PropagateTagsToVolumeOnCreation": "true",
+                "SecurityGroups": [
+                    {
+                        "Ref": "TestSG"
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "EC2devopscldprjt"
+                    }
+                ]
+            }
+        },
+        "devopsprjtKinesisStream": {
+            "Type": "AWS::Kinesis::Stream",
+            "Properties": {
+                "Name": "m03p02_raw_data_stream",
+                "ShardCount": 1
+            }
+        },
+        "devopsprjtSNSTopic": {
+            "Type": "AWS::SNS::Topic",
+            "Properties": {
+                "TopicName": "notify-mail-sns-topic",
+                "Subscription": [
+                    {
+                        "Endpoint": "vassu.m4@gmail.com",
+                        "Protocol": "email"
+                    }
+                ]
+            }
+        },
+        "devopsprjtDynamoDB": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "deviceid",
+                        "AttributeType": "S"
+                    },
+                    {
+                        "AttributeName": "timestamp",
+                        "AttributeType": "S"
+                    }
+                ],
+                "KeySchema": [
+                    {
+                        "AttributeName": "deviceid",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "timestamp",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "TableName": "m03p02_anomaly_data",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "devopsprjtDynamoDB"
+                    }
+                ],
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": 5,
+                    "WriteCapacityUnits": 5
+                }
+            }
+        },
+        "devopsprojS3Bucket": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+                "BucketName": "s3devopscldsproj"
+            }
+        },
+        "DevOpsLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+                "FunctionName": "devopslambdafunc",
+                "Description": "Gets records from kinesis,finds anamoly and inserts record in dynamo db",
+                "Runtime": "python3.9",
+                "MemorySize": "128",
+                "Role": "arn:aws:iam::123156441955:role/devopsLambdaRole",
+                "Timeout": "300",
+                "Handler": "index.lambda_handler",
+                "Code": {
+                    "ZipFile": "from pprint import pprint\nimport boto3\nimport json\nimport csv\nimport datetime\nimport os\nimport random\nimport base64\nfrom decimal import Decimal\nfrom botocore.exceptions import ClientError\ndef lambda_handler(event, context):\n    AWS_REGION = 'us-east-1'\n    # print(event)\n\n    dynamodb_res = boto3.resource('dynamodb', region_name=AWS_REGION)\n    anomaly_table = dynamodb_res.Table('m03p02_anomaly_data')\n\n    sns_client = boto3.client('sns', region_name=AWS_REGION)\n    topic_arn = \"arn:aws:sns:us-east-1:123156441955:notify-mail-sns-topic\"\n\n    for record in event['Records']:\n        data_point = base64.b64decode(record['kinesis']['data'])\n        data_point = str(data_point, 'utf-8')\n        pprint(data_point)\n        data_point = json.loads(data_point)\n\n        anomaly_type = {}\n\n        if data_point[\"value\"] <= (1.1 * float(data_point['lowest_temp'])):\n            anomaly_type = \"Cold\"\n        elif data_point[\"value\"] >= (0.9 * float(data_point['highest_point'])):\n            anomaly_type = \"Hot\"\n\n        anomaly_data = {'deviceid': data_point[\"deviceid\"],\n                        'anomalyDate': data_point[\"date\"],\n                        'timestamp': data_point[\"timestamp\"],\n                        'value': data_point[\"value\"],\n                        'anomalyType': anomaly_type}\n\n        anomaly_data = json.loads(json.dumps(anomaly_data), parse_float=Decimal)\n        response = anomaly_table.put_item(Item=anomaly_data)\n        # pprint(\"DB Response Data: \", response)\n        sns_client.publish(TopicArn=topic_arn,\n                           Message=str(\"Anomaly value = \" + str(anomaly_data[\n                                                                    'value']) + \" is detected. \" + \"Detcted temperature can be categorized as \" +\n                                       anomaly_data['anomalyType']),\n                           Subject=str(anomaly_data['anomalyType'] + \" temperature is detected.\")\n                           )\n    return 1\n"
+                }
+            }
+        },
+        "DevOpsLambdaKinesisSourceMapping": {
+            "Type": "AWS::Lambda::EventSourceMapping",
+            "Properties": {
+                "EventSourceArn": {
+                    "Fn::GetAtt": "devopsprjtKinesisStream.Arn"
+                },
+                "FunctionName": {
+                    "Fn::GetAtt": "DevOpsLambdaFunction.Arn"
+                },
+                "StartingPosition": "TRIM_HORIZON"
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "broker_host": "localhost",
+    "broker_port": 1883,
+    "devices": [
+        {
+            "device_type": "soil_sensor",
+            "description": "Soil sensors for agri tech project",
+            "publish_topic": "/device/data",
+            "device_status": "OFF",
+            "device_lat": 19.0760,
+            "device_lon": 72.8777,
+            "device_count": 20
+        },
+        {
+            "device_type": "sprinkler_sensor",
+            "description": "Sprinkler sensors for agri tech project",
+            "subscribe_topic": "/device/",
+            "device_status": "OFF",
+            "device_lat": 19.0760,
+            "device_lon": 72.8777,
+            "device_count": 5
+        }
+    ]
+}

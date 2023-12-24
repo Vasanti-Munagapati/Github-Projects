@@ -1,0 +1,266 @@
+BSM_G101-Temperature-2023-02-02.csv
+BSM_G101-SPO2-2023-02-02.csv
+BSM_G101-HeartRate-2023-02-02.csv
+BSM_G102-Temperature-2023-02-02.csv
+BSM_G102-SPO2-2023-02-02.csv
+BSM_G102-HeartRate-2023-02-02.csv
+bsm aggregate Table status: CREATING
+
+ Aggregating data for device : BSM_G101
+BSM_G101-Temperature-2023-02-02.csv
+
+ Aggregating data for device : BSM_G101
+BSM_G101-SPO2-2023-02-02.csv
+
+ Aggregating data for device : BSM_G101
+BSM_G101-HeartRate-2023-02-02.csv
+
+ Aggregating data for device : BSM_G102
+BSM_G102-Temperature-2023-02-02.csv
+
+ Aggregating data for device : BSM_G102
+BSM_G102-SPO2-2023-02-02.csv
+
+ Aggregating data for device : BSM_G102
+BSM_G102-HeartRate-2023-02-02.csv
+bsm alerts Table status: CREATING
+
+ Processing rules for device : BSM_G101
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:04:00
+ for rule :  2 continuous aggregated (at the minute level) 84.6 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:05:00
+ for rule :  2 continuous aggregated (at the minute level) 84.6 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:06:00
+ for rule :  2 continuous aggregated (at the minute level) 84.2 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:07:00
+ for rule :  2 continuous aggregated (at the minute level) 84.2 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:21:00
+ for rule :  2 continuous aggregated (at the minute level) 85.5 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:22:00
+ for rule :  2 continuous aggregated (at the minute level) 85.5 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:23:00
+ for rule :  2 continuous aggregated (at the minute level) 84.8 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:24:00
+ for rule :  2 continuous aggregated (at the minute level) 84.8 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:25:00
+ for rule :  2 continuous aggregated (at the minute level) 85.7 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:26:00
+ for rule :  2 continuous aggregated (at the minute level) 85.7 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:27:00
+ for rule :  2 continuous aggregated (at the minute level) 82.2 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:28:00
+ for rule :  2 continuous aggregated (at the minute level) 82.2 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:29:00
+ for rule :  2 continuous aggregated (at the minute level) 84.1 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:30:00
+ for rule :  2 continuous aggregated (at the minute level) 84.1 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:31:00
+ for rule :  2 continuous aggregated (at the minute level) 83.7 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:32:00
+ for rule :  2 continuous aggregated (at the minute level) 83.7 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:33:00
+ for rule :  2 continuous aggregated (at the minute level) 86 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:34:00
+ for rule :  2 continuous aggregated (at the minute level) 86 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:35:00
+ for rule :  2 continuous aggregated (at the minute level) 84.2 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:36:00
+ for rule :  2 continuous aggregated (at the minute level) 84.2 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:37:00
+ for rule :  2 continuous aggregated (at the minute level) 83.1 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:38:00
+ for rule :  2 continuous aggregated (at the minute level) 83.1 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:39:00
+ for rule :  2 continuous aggregated (at the minute level) 83.5 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:40:00
+ for rule :  2 continuous aggregated (at the minute level) 83.5 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:41:00
+ for rule :  2 continuous aggregated (at the minute level) 82.5 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:42:00
+ for rule :  2 continuous aggregated (at the minute level) 82.5 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:43:00
+ for rule :  2 continuous aggregated (at the minute level) 83.1 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:44:00
+ for rule :  2 continuous aggregated (at the minute level) 83.1 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:45:00
+ for rule :  2 continuous aggregated (at the minute level) 85.9 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:46:00
+ for rule :  2 continuous aggregated (at the minute level) 85.9 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:47:00
+ for rule :  2 continuous aggregated (at the minute level) 86.7 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:48:00
+ for rule :  2 continuous aggregated (at the minute level) 86.7 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:49:00
+ for rule :  2 continuous aggregated (at the minute level) 85.8 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:50:00
+ for rule :  2 continuous aggregated (at the minute level) 85.8 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:51:00
+ for rule :  2 continuous aggregated (at the minute level) 84.2 are outside the 89/95
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:52:00
+ for rule :  2 continuous aggregated (at the minute level) 84.2 are outside the 89/95
+
+ Processing rules for device : BSM_G101
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:07:00
+ for rule :  3 continuous aggregated (at the minute level) 98.6 are outside the 99/111
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:20:00
+ for rule :  3 continuous aggregated (at the minute level) 98.6 are outside the 99/111
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:21:00
+ for rule :  3 continuous aggregated (at the minute level) 98.6 are outside the 99/111
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:47:00
+ for rule :  3 continuous aggregated (at the minute level) 98.9 are outside the 99/111
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:48:00
+ for rule :  3 continuous aggregated (at the minute level) 98.9 are outside the 99/111
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:49:00
+ for rule :  3 continuous aggregated (at the minute level) 98.9 are outside the 99/111
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:50:00
+ for rule :  3 continuous aggregated (at the minute level) 98.2 are outside the 99/111
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:51:00
+ for rule :  3 continuous aggregated (at the minute level) 98.2 are outside the 99/111
+
+Alert for device_id BSM_G101 for sensor type BSM_G101 starting at 2023-02-02 13:52:00
+ for rule :  3 continuous aggregated (at the minute level) 98.2 are outside the 99/111
+
+ Processing rules for device : BSM_G102
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:05:00
+ for rule :  2 continuous aggregated (at the minute level) 74 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:06:00
+ for rule :  2 continuous aggregated (at the minute level) 74 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:07:00
+ for rule :  2 continuous aggregated (at the minute level) 76.6 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:08:00
+ for rule :  2 continuous aggregated (at the minute level) 76.6 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:09:00
+ for rule :  2 continuous aggregated (at the minute level) 75.8 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:10:00
+ for rule :  2 continuous aggregated (at the minute level) 75.8 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:11:00
+ for rule :  2 continuous aggregated (at the minute level) 73.8 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:12:00
+ for rule :  2 continuous aggregated (at the minute level) 73.8 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:13:00
+ for rule :  2 continuous aggregated (at the minute level) 74.4 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:14:00
+ for rule :  2 continuous aggregated (at the minute level) 74.4 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:15:00
+ for rule :  2 continuous aggregated (at the minute level) 74.4 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:16:00
+ for rule :  2 continuous aggregated (at the minute level) 74.4 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:17:00
+ for rule :  2 continuous aggregated (at the minute level) 73.2 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:18:00
+ for rule :  2 continuous aggregated (at the minute level) 73.2 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:19:00
+ for rule :  2 continuous aggregated (at the minute level) 75.1 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:20:00
+ for rule :  2 continuous aggregated (at the minute level) 75.1 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:21:00
+ for rule :  2 continuous aggregated (at the minute level) 75.3 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:22:00
+ for rule :  2 continuous aggregated (at the minute level) 75.3 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:36:00
+ for rule :  2 continuous aggregated (at the minute level) 73.2 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:37:00
+ for rule :  2 continuous aggregated (at the minute level) 73.2 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:38:00
+ for rule :  2 continuous aggregated (at the minute level) 71.5 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:39:00
+ for rule :  2 continuous aggregated (at the minute level) 71.5 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:40:00
+ for rule :  2 continuous aggregated (at the minute level) 72.6 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:41:00
+ for rule :  2 continuous aggregated (at the minute level) 72.6 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:42:00
+ for rule :  2 continuous aggregated (at the minute level) 74.1 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:43:00
+ for rule :  2 continuous aggregated (at the minute level) 74.1 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:44:00
+ for rule :  2 continuous aggregated (at the minute level) 73.8 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:45:00
+ for rule :  2 continuous aggregated (at the minute level) 73.8 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:46:00
+ for rule :  2 continuous aggregated (at the minute level) 75.3 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:47:00
+ for rule :  2 continuous aggregated (at the minute level) 75.3 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:48:00
+ for rule :  2 continuous aggregated (at the minute level) 72.5 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:49:00
+ for rule :  2 continuous aggregated (at the minute level) 72.5 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:50:00
+ for rule :  2 continuous aggregated (at the minute level) 74.8 are outside the 87/99
+
+Alert for device_id BSM_G102 for sensor type BSM_G102 starting at 2023-02-02 13:51:00
+ for rule :  2 continuous aggregated (at the minute level) 74.8 are outside the 87/99

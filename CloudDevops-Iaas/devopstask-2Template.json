@@ -1,0 +1,97 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Parameters": {
+        "Subnets2": {
+            "Description": "VPC Subnet-2 Id",
+            "Type": "AWS::EC2::Subnet::Id",
+            "Default" : "subnet-00af8ebcfabf100e3"
+        }
+    },
+    "Resources": {
+        "TestSG": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+            	"SecurityGroupIngress" : [{
+         			"IpProtocol" : "tcp",
+         			"FromPort" : 22,
+         			"ToPort" : 22,
+         			"CidrIp" : "0.0.0.0/0"
+      			},
+      			{
+         			"IpProtocol" : "tcp",
+         			"FromPort" : 22,
+         			"ToPort" : 22,
+         			"CidrIp" : "0.0.0.0/0"
+      			}],
+                "GroupDescription": "Allows HTTP and SSH",
+                "Tags" : [ {"Key" : "Name", "Value" : "TestSG"} ]
+            }
+        },
+        "EC2devopscldprjt": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "AvailabilityZone" : "us-east-1a",
+            	"InstanceType" : "t2.micro",
+            	"ImageId" : "ami-0557a15b87f6559cf",
+                "KeyName" : "devopscldprjt",
+                "PropagateTagsToVolumeOnCreation": "true",
+                "SecurityGroups" : [{ "Ref" : "TestSG" }],
+                "Tags" : [ {"Key" : "Name", "Value" : "EC2devopscldprjt"} ]
+                    }                
+            },
+        "devopsprjtKinesisStream" : {
+            "Type" : "AWS::Kinesis::Stream",
+            "Properties" : {
+                "Name" : "m03p02_raw_data_stream",
+                "ShardCount" : 1
+              }
+          },
+        "devopsprjtSNSTopic" : {
+            "Type" : "AWS::SNS::Topic",
+            "Properties" : {
+                "TopicName" : "notify-mail-sns-topic",
+                "Subscription" :[ {
+                    "Endpoint" : "vassu.m4@gmail.com",
+                    "Protocol" : "email"
+                }]
+            }
+        },
+        "devopsprjtDynamoDB" : {
+  			"Type" : "AWS::DynamoDB::Table",
+  			"Properties" : {
+      			"AttributeDefinitions" : [
+      			 	{
+  						"AttributeName" : "deviceid",
+  						"AttributeType" : "S"
+					}, 
+					{
+  						"AttributeName" : "timestamp",
+  						"AttributeType" : "S"
+					}
+      			 ],
+      			"KeySchema" : [
+      				{
+                        "AttributeName": "deviceid",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "timestamp",
+                        "KeyType": "RANGE"
+                    }
+                ],
+      			"TableName" : "m03p02_anomaly_data",
+      			"Tags" : [ {"Key" : "Name", "Value" : "devopsprjtDynamoDB"} ],
+      			"ProvisionedThroughput": {
+                    "ReadCapacityUnits": 5,
+                    "WriteCapacityUnits": 5
+                }
+    		}
+    	},
+        "devopsprojS3Bucket": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+              "BucketName": "s3devopscldsproj"
+            }
+        }
+    }
+}
